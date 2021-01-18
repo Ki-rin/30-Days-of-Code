@@ -1,0 +1,42 @@
+class Person:
+	def __init__(self, firstName, lastName, idNumber):
+		self.firstName = firstName
+		self.lastName = lastName
+		self.idNumber = idNumber
+	def printPerson(self):
+		print("Name:", self.lastName + ",", self.firstName)
+		print("ID:", self.idNumber)
+
+import statistics
+
+class Student(Person):
+    def __init__(self, firstName, lastName, idNumber, scores):
+        super().__init__(firstName, lastName, idNumber)
+        self.scores = scores
+
+    def calculate(self):
+        s = statistics.mean(scores)
+        grade = "T"
+        if s >= 90:
+            grade = "O"
+        elif s >= 80:
+            grade = "E"
+        elif s >= 70:
+            grade = "A"
+        elif s >= 55:
+            grade = "P"
+        elif s >= 40:
+            grade = "D"
+            
+        return grade
+    
+
+line = input().split()
+firstName = line[0]
+lastName = line[1]
+idNum = line[2]
+numScores = int(input()) # not needed for Python
+scores = list( map(int, input().split()) )
+s = Student(firstName, lastName, idNum, scores)
+s.printPerson()
+print("Grade:", s.calculate())
