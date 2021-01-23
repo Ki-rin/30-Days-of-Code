@@ -1,0 +1,12 @@
+if __name__ == '__main__':
+    n = int(input())
+    arr = map(int, input().split())
+    
+    
+    
+    d = list(dict.fromkeys(arr)) # remove duplicates
+    d = sorted(d)                # sort
+    d.remove(max(d))             # remove max value
+    
+    
+    print(d[-1])
