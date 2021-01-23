@@ -1,0 +1,22 @@
+if __name__ == '__main__':
+    name = []
+    score = []
+    n = int(input())
+    for _ in range(n):
+        name.append(input())
+        score.append(float(input()))
+        
+    d = list(dict.fromkeys(score)) # remove duplicates
+    d = sorted(d)                # sort
+    d.remove(min(d))             # remove MIN value
+    arr1 = []
+
+    
+    for i in range(n):
+        if score[i] == min(d):
+                arr1.append(name[i])
+    
+    
+    for i in range(len(arr1)):
+        print(sorted(arr1)[i])
+    
