@@ -1,0 +1,21 @@
+import sys
+
+n = int(input().strip())
+a = list(map(int, input().strip().split(' ')))
+numberOfSwaps = 0 #Track number of elements swapped during a single array traversal
+
+for i in range(n):
+    
+    for j in range(n-1):
+        #Swap adjacent elements if they are in decreasing order
+        if a[j] > a[j + 1]:
+            temp = a[j]
+            a[j] = a[j + 1]
+            a[j + 1] = temp
+            numberOfSwaps+=1
+            
+
+    
+print('Array is sorted in %.d swaps.' %numberOfSwaps,
+ '\nFirst Element:', min(a),
+ '\nLast Element:', max(a))
