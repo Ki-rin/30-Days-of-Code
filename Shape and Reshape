@@ -1,0 +1,11 @@
+import numpy
+
+arr = numpy.array(list(map(int,input().rstrip().split())))
+
+print( numpy.reshape(arr,(3,3)))
+
+'''
+change_array = numpy.array(arr)
+change_array.shape = (3, 3)
+print(change_array)     
+'''
