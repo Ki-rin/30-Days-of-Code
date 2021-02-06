@@ -1,0 +1,22 @@
+import math
+import os
+import random
+import re
+import sys
+
+
+
+if __name__ == '__main__':
+    N = int(input())
+    firstName =[]
+
+    for N_itr in range(N):
+        firstNameEmailID = input().split()
+
+        emailID = firstNameEmailID[1].split('@')
+        
+        if emailID[1].startswith('gmail'):
+            firstName.append(firstNameEmailID[0])
+            
+    print(*sorted(firstName),sep='\n')
+            
