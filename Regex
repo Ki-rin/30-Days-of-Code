@@ -1,0 +1,9 @@
+#task is to find out whether  is a valid regex or not.
+import re
+for _ in range(int(input())):
+    ans = True
+    try:
+        reg = re.compile(input())
+    except re.error:
+        ans = False
+    print(ans)
