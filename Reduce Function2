@@ -1,0 +1,20 @@
+from fractions import Fraction
+from functools import reduce
+
+def product(fracs):
+    t = reduce(lambda x, y : x * y, fracs)
+    return t.numerator, t.denominator
+'''
+The reduce() function accepts a function and a sequence and returns a single value calculated as follows:
+- Initially, the function is called with the first two items from the sequence and the result is returned.
+- The function is then called again with the result obtained in step 1 and the next value in the sequence. 
+- This process keeps repeating until there are items in the sequence.
+'''
+
+k= "3 1 2 3 4 10 6"
+fracs = []
+for i in range(int(k[0])):
+    fracs.append(Fraction(*list(map(int, k[2:].split()))[(i+1):(i+3)]))
+    print(list(map(int, k[2:].split()))[(i+1):(i+3)])
+result = product(fracs)
+print(*result)
