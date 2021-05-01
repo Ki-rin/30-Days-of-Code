@@ -1,0 +1,16 @@
+def wrapper(f):
+    def fun(l):
+        f(map(lambda x: "+91 " + x[-10:-5] + " " + x[-5:], l))
+    return fun
+
+'''An @ symbol at the beginning of a line is used for class, function and method decorators. 
+The line below equvalent to 
+sort_phone = wrapper(sort_phone)'''
+
+@wrapper
+def sort_phone(l):
+    print(*sorted(l), sep='\n')
+
+if __name__ == '__main__':
+    l = [input() for _ in range(int(input()))]
+    sort_phone(l) 
