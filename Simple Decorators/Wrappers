@@ -14,3 +14,23 @@ def sort_phone(l):
 if __name__ == '__main__':
     l = [input() for _ in range(int(input()))]
     sort_phone(l) 
+    
+'''
+def decorator(func):
+   return func
+
+@decorator
+def some_func():
+    pass
+    
+    
+***Is equivalent to this code:
+
+def decorator(func):
+    return func
+
+def some_func():
+    pass
+
+some_func = decorator(some_func)
+''''
