@@ -1,0 +1,19 @@
+#A valid mobile number is a ten digit number starting with a  7 , 8 or 9 .
+import re
+
+for i in range(int(input())):
+        text = input()
+        match = re.search(r'^[789]\d{9}$', text)
+    # If-statement after search() tests if it succeeded
+        if match:
+            print('YES') # match.group() 
+        else:
+            print('NO')
+
+            
+'''
+[0-9]    match a single character in the range 0-9
+\d    matches a single digit
+^    match start at beginning of the string
+$    match start at end of the string
+'''
