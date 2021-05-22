@@ -1,0 +1,16 @@
+import re
+
+for _ in range(int(input())):
+    line =  ''.join(sorted(input()))
+    try:
+        assert len(line) == 10
+        assert re.search(r'[A-Z]{2}', line) # Contain at least 2 uppercase 
+        assert re.search(r'[\d]{3}', line)  # Contains at least 3 digits 
+        assert not re.search(r'[^a-zA-Z\d]', line) #Contains only alphanumeric characters
+# Example :  [^arn]    Returns a match for any character EXCEPT a, r, and n
+        assert not re.search(r'(.)\1', line) #No character should repeat.
+# .    Any character (except newline character)
+    except:
+        print("Invalid")
+    else:
+        print("Valid")
