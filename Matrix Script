@@ -1,0 +1,39 @@
+#!/bin/python3
+
+import math
+import os
+import random
+import re
+import sys
+
+
+
+
+first_multiple_input = input().rstrip().split()
+
+n = int(first_multiple_input[0])
+
+m = int(first_multiple_input[1])
+
+matrix = []
+matrix2 = []
+
+for _ in range(n):
+    matrix_item = input()
+    matrix.append(matrix_item)
+    
+for i in range(m):
+    for j in range(n):
+       matrix2.append(matrix[j][i])
+
+matrix3 = ''.join(matrix2)
+
+pattern = r'([A-Za-z0-9])[!@#$%&\s]+(?=[A-Za-z0-9])'
+# \s - matches any whitespace character
+# +  - matches one or more times
+# (?=...) - succeeds if the contained regular expression, represented here by ...
+# successfully matches at the current location, and fails otherwise.
+
+matrix3 = re.sub(pattern,r'\1 ', matrix3)
+
+print(matrix3)
