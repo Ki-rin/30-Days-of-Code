@@ -1,0 +1,14 @@
+# || -> or . && -> and . Only change those which have space on both sides.
+
+import re
+a = r"\s\&\&\s"
+o = r"\s\|\|\s"
+ao = r"((\s\&\&\s)|(\s\|\|\s))"
+
+for _ in range(int(input())):
+    line = input()
+
+    while len(re.findall(ao, line))>0:
+        line = re.sub(a, " and ", line)
+        line = re.sub(o, " or ", line)
+    print(line)
